@@ -44,9 +44,7 @@ class _MainAppState extends State<MainApp> {
           width: 2000,
           color: Color.fromRGBO(168, 218, 220, 1),
           child: Center(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
+            child: ListView(
               children: [
                 Lottie.network(
                     'https://lottie.host/9a539595-bd80-4a1d-8063-188941ccc3f0/d7jxh7KiHX.json'),
