@@ -133,7 +133,7 @@ class _MainAppState extends State<MainApp> {
                     style: ElevatedButton.styleFrom(
                         backgroundColor: const Color.fromRGBO(29, 53, 87, 1)),
                     child: Text(
-                      "press",
+                      "Quote",
                       style: TextStyle(
                           color: const Color.fromRGBO(241, 250, 238, 1)),
                     ))
