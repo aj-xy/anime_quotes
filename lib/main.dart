@@ -32,10 +32,15 @@ class _MainAppState extends State<MainApp> {
     } else {
       print('error: ${response.statusCode}');
     }
+    initState(){
+      fetchData();
+    }
   }
 
   @override
   Widget build(BuildContext context) {
+
+    
     return MaterialApp(
       home: Scaffold(
         body: Container(
@@ -44,11 +49,12 @@ class _MainAppState extends State<MainApp> {
           width: 2000,
           color: Color.fromRGBO(168, 218, 220, 1),
           child: Center(
-            child: ListView(
+            child:ListView(
               children: [
                 Lottie.network(
                     'https://lottie.host/9a539595-bd80-4a1d-8063-188941ccc3f0/d7jxh7KiHX.json'),
-                Container(
+                   responseData==null?Center(child: CircularProgressIndicator()): Column(children: [
+                       Container(
                   padding: EdgeInsets.all(5),
                   decoration: BoxDecoration(
                       border: Border.all(),
@@ -61,9 +67,8 @@ class _MainAppState extends State<MainApp> {
                         style: TextStyle(
                             color: Color.fromRGBO(0, 0, 0, 1), fontSize: 20),
                       ),
-                      responseData == null
-                          ? CircularProgressIndicator()
-                          : Text(
+                     
+                      Text(
                               responseData['quote'],
                               style:
                                   TextStyle(color: Colors.black, fontSize: 20),
@@ -123,6 +128,8 @@ class _MainAppState extends State<MainApp> {
                     ],
                   ),
                 ),
+                    ],),
+               
                 SizedBox(
                   height: 30,
                 ),
